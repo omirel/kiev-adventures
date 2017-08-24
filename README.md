@@ -14,6 +14,10 @@ docker exec -it kiev-adventures-web php -r "copy('https://getcomposer.org/instal
 docker exec -it kiev-adventures-web php composer-setup.php
 docker exec -it kiev-adventures-web php -r "unlink('composer-setup.php');"
 docker exec -it kiev-adventures-web php composer.phar install
+
+docker exec -it kiev-adventures-web chown -R www-data /var/www
+docker exec -it kiev-adventures-web rm -rf /var/www/var/cache/*
+
 ```
 
 __Linux:__
