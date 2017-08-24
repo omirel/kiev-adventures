@@ -5,15 +5,15 @@ applications.
 
 ## Installation
 
-__Mac:__
-
+__Docker__
 ```
-rm -rf var/cache/*
-rm -rf var/logs/*
-rm -rf var/sessions/*
-HTTPDUSER=`ps axo user,comm | grep -E '[a]pache|[h]ttpd|[_]www|[w]ww-data|[n]ginx' | grep -v root | head -1 | cut -d\  -f1`
-sudo chmod +a "$HTTPDUSER allow delete,write,append,file_inherit,directory_inherit" var/cache var/logs var/uploads var/uploads/* web/uploads web/uploads/* var/indexes var/sessions
-sudo chmod +a "`whoami` allow delete,write,append,file_inherit,directory_inherit" var/cache var/logs var/uploads var/uploads/* web/uploads web/uploads/* var/indexes var/sessions
+docker exec -it kiev-adventures-web php bin/adminconsole sulu:build dev
+docker exec -it kiev-adventures-web php bin/adminconsole assets:install
+
+docker exec -it kiev-adventures-web php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+docker exec -it kiev-adventures-web php composer-setup.php
+docker exec -it kiev-adventures-web php -r "unlink('composer-setup.php');"
+docker exec -it kiev-adventures-web php composer.phar install
 ```
 
 __Linux:__
