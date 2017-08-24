@@ -1,0 +1,32 @@
+version: '2'
+services:
+  apachephp:
+    build: docker/apache-php7-dev
+    container_name: kiev-adventures-web
+    ports:
+      - "8000:80"
+    links:
+      - 'mysql:db'
+    volumes:
+      - ./:/var/www
+    restart: 'no' #always
+    tty: true
+#    environment:
+#      XDEBUG_CONFIG: remote_host=192.168.15.72
+  mysql:
+    build: ./docker/mysql
+    container_name: kiev-adventures-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=ka
+      - MYSQL_USER=ka
+      - MYSQL_PASSWORD=ka
+      - MYSQL_DATABASE=kiev-adventures
+    ports:
+      - '3306:3306'
+    restart: 'no' #always
+    volumes_from:
+      - DatabaseData
+  DatabaseData:
+    container_name: kiev-adventures-db-data
+    image: mysql:5.6.25
+    entrypoint: /bin/bash
