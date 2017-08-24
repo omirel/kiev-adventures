@@ -1,0 +1,27 @@
+magephp:
+  environments:
+    production:
+      ssh:
+        port: 22
+        flags: -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
+      user: root
+      branch: master
+      from: ./
+      host_path: /var/www/html
+      exclude:
+        - ./var/cache/*
+        - ./var/log/*
+        - ./web/app_dev.php
+      hosts:
+        - 185.162.249.225
+      pre-deploy:
+#        - git/update
+#        - composer/install
+#        - composer/dump-autoload
+      on-deploy:
+#        - symfony/cache-warmup: { env: 'dev' }
+#        - symfony/assets-install: { env: 'dev' }
+#        - symfony/assetic-dump: { env: 'dev' }
+      on-release:
+      post-release:
+      post-deploy:

@@ -1,7 +1,0 @@
-# global settings
-name: kiev-adventures
-email: olaf@mirel.de
-notifications: true
-logging: true
-maxlogs: 30
-ssh_needs_tty: false
