@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d8a34c56623fbb5d05e90fe2f94efe06",
+    "content-hash": "ae5e9a65b913e6b44bf8e1c3ddae75c0",
     "packages": [
         {
             "name": "aferrandini/urlizer",
@@ -6089,23 +6089,29 @@
     "packages-dev": [
         {
             "name": "andres-montanez/magallanes",
-            "version": "1.0.7",
+            "version": "3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/andres-montanez/Magallanes.git",
-                "reference": "515f90950b764e7fd8c42811f3d0db3b90c0ce82"
+                "reference": "3ed4c758c07f1b622cc4a4ebe2b60e045f184169"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/andres-montanez/Magallanes/zipball/515f90950b764e7fd8c42811f3d0db3b90c0ce82",
-                "reference": "515f90950b764e7fd8c42811f3d0db3b90c0ce82",
+                "url": "https://api.github.com/repos/andres-montanez/Magallanes/zipball/3ed4c758c07f1b622cc4a4ebe2b60e045f184169",
+                "reference": "3ed4c758c07f1b622cc4a4ebe2b60e045f184169",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4"
+                "monolog/monolog": "^1.0",
+                "php": ">=5.5.9",
+                "symfony/console": "^3.0",
+                "symfony/event-dispatcher": "^3.0",
+                "symfony/filesystem": "^3.0",
+                "symfony/finder": "^3.0",
+                "symfony/process": "^3.0",
+                "symfony/yaml": "^3.0"
             },
             "require-dev": {
-                "php-mock/php-mock": "^0.1",
                 "phpunit/phpunit": "4.8.*",
                 "satooshi/php-coveralls": "~1.0"
             },
@@ -6113,29 +6119,33 @@
                 "bin/mage"
             ],
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0.x-dev",
+                    "dev-nostromo": "3.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
-                    "Mage\\": "./Mage",
-                    "Task\\": [
-                        ".mage/tasks",
-                        "../../../.mage/tasks"
-                    ],
-                    "Command\\": [
-                        ".mage/tasks",
-                        "../../../.mage/commands"
-                    ]
+                    "Mage\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
-            "description": "A Deployment Tool for PHP Applications",
+            "authors": [
+                {
+                    "name": "Andrés Montañez",
+                    "email": "andresmontanez@gmail.com"
+                }
+            ],
+            "description": "The Deployment Tool for PHP Applications",
             "homepage": "http://magephp.com",
             "keywords": [
                 "deployment"
             ],
-            "time": "2017-01-06T11:41:52+00:00"
+            "time": "2017-07-22T21:01:32+00:00"
         },
         {
             "name": "dantleech/glob-finder",
