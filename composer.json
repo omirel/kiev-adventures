@@ -36,7 +36,8 @@
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.8 || ~3.0",
-        "phpcr/phpcr-shell": "~1.0"
+        "phpcr/phpcr-shell": "~1.0",
+        "andres-montanez/magallanes": "~1.0.1"
     },
     "scripts": {
         "post-install-cmd": [
