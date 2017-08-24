@@ -5,7 +5,7 @@ applications.
 
 ## Installation
 
-__Docker__
+__Docker setup__
 ```
 docker exec -it kiev-adventures-web php bin/adminconsole sulu:build dev
 docker exec -it kiev-adventures-web php bin/adminconsole assets:install
@@ -18,6 +18,19 @@ docker exec -it kiev-adventures-web php composer.phar install
 docker exec -it kiev-adventures-web chown -R www-data /var/www
 docker exec -it kiev-adventures-web rm -rf /var/www/var/cache/*
 
+```
+
+__Docker deployment setup__
+
+@see https://medium.com/@jontorrado/deploying-a-symfony2-project-with-magallanes-28abe452c54c
+```
+docker exec -it kiev-adventures-web bin/mage init --name=kiev-adventures --email=olaf@mirel.de
+docker exec -it kiev-adventures-web bin/mage add environment --name="production" --enableReleases
+```
+
+__Docker deployment__
+```
+docker exec -it kiev-adventures-web bin/mage deploy to:production
 ```
 
 __Linux:__
