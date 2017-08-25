@@ -14,6 +14,9 @@
     <h1 property="title">{{ content.title }}</h1>
 
     <div property="article">
+        {{ content.subline }}
         {{ content.article|raw }}
+        {{ content.date }}
+        {{ content.location }}
     </div>
 {% endblock %}

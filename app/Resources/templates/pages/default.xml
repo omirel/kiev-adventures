@@ -40,6 +40,34 @@
             </properties>
         </section>
 
+        <property name="subline" type="text_line">
+            <meta>
+                <title lang="en">Subline</title>
+                <title lang="de">Zwischenüberschrift</title>
+            </meta>
+        </property>
+
+        <property name="tags" type="tag_list">
+            <meta>
+                <title lang="en">Tags</title>
+                <title lang="de">Tags</title>
+            </meta>
+        </property>
+
+        <property name="location" type="location">
+            <meta>
+                <title lang="en">Location</title>
+                <title lang="de">Lokation</title>
+            </meta>
+        </property>
+
+        <property name="date" type="date">
+            <meta>
+                <title lang="en">Date</title>
+                <title lang="de">Datum</title>
+            </meta>
+        </property>
+
         <property name="article" type="text_editor">
             <meta>
                 <title lang="en">Article</title>
