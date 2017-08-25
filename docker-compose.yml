@@ -9,6 +9,7 @@ services:
       - 'mysql:db'
     volumes:
       - ./:/var/www
+      - ~/.ssh:/root/.ssh
     restart: 'no' #always
     tty: true
 #    environment:

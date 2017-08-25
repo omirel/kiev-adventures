@@ -3,25 +3,26 @@ magephp:
     production:
       ssh:
         port: 22
-        flags: -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
+        flags: -i ~/.ssh/ka_id_rsa -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
       user: root
       branch: master
       from: ./
-      host_path: /var/www/html
+      host_path: /var/www/kiev-adventures
       exclude:
         - ./var/cache/*
         - ./var/log/*
         - ./web/app_dev.php
       hosts:
-        - 185.162.249.225
+        - kiev-adventures.com
       pre-deploy:
-#        - git/update
+        - git/update
 #        - composer/install
 #        - composer/dump-autoload
       on-deploy:
-#        - symfony/cache-warmup: { env: 'dev' }
-#        - symfony/assets-install: { env: 'dev' }
-#        - symfony/assetic-dump: { env: 'dev' }
+        - symfony/cache-warmup: { env: 'prod' }
+        - symfony/assets-install: { env: 'prod' }
+#        - symfony/assetic-dump: { env: 'prod' }
+        - fs/copy: { from: 'app/config/parameters.prod.yml', to: 'app/config/parameters.yml' }
       on-release:
       post-release:
       post-deploy:

@@ -1,0 +1,24 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_driver: pdo_mysql
+    database_host: localhost
+    database_port: 3306
+    database_name: kiev-adventures
+    database_user: root
+    database_password: i81b4u
+    database_version: 5.5
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    secret: ThisTokenIsNotSoSecretChangeIt
+    sulu_admin.name: admin
+    sulu_admin.email: admin@admin.de
+    websocket_port: 9876
+    websocket_url: sulu.lo
+    phpcr_backend:
+        type: doctrinedbal
+    phpcr_workspace: default
+    phpcr_user: admin
+    phpcr_pass: admin
+    phpcr_cache: file_system
