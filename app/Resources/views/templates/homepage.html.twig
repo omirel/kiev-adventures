@@ -11,8 +11,13 @@
 {% endblock %}
 
 {% block content %}
-    <h1 property="title">{{ content.title }}</h1>
+    <p class="lead">{{ content.title }}</p>
 
+    <form action="{{ path('sulu_search.website_search') }}" method="GET">
+        <input name="q" type="text" placeholder="Search" />
+        <input type="submit" value="Go" />
+    </form>
+    
     <div property="article">
         {{ content.article|raw }}
     </div>
