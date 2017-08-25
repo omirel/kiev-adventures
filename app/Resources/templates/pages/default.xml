@@ -40,6 +40,21 @@
             </properties>
         </section>
 
+
+        <property name="contact" type="contact">
+            <meta>
+                <title lang="en">Contact</title>
+                <title lang="de">Kontakt</title>
+            </meta>
+        </property>
+
+        <property name="category" type="category_list">
+            <meta>
+                <title lang="en">Category</title>
+                <title lang="de">Kategorie</title>
+            </meta>
+        </property>
+
         <property name="subline" type="text_line">
             <meta>
                 <title lang="en">Subline</title>
