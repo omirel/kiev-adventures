@@ -7,7 +7,7 @@ applications.
 
 __Docker setup__
 ```
-docker exec -it kiev-adventures-web php bin/adminconsole sulu:build dev
+docker exec -it kiev-adventures-web php bin/adminconsole sulu:build --env=prod
 docker exec -it kiev-adventures-web php bin/adminconsole assets:install
 
 docker exec -it kiev-adventures-web php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -26,6 +26,12 @@ __Docker deployment setup__
 ```
 docker exec -it kiev-adventures-web bin/mage init --name=kiev-adventures --email=olaf@mirel.de
 docker exec -it kiev-adventures-web bin/mage add environment --name="production" --enableReleases
+```
+
+__Create ssh key_
+```
+ssh-keygen -b 4096
+ssh-copy-id -i .ssh/ka_id_rsa.pub root@185.162.249.225
 ```
 
 __Docker deployment__
