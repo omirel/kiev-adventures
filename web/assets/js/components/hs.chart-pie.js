@@ -106,7 +106,7 @@
           width: $this.data('circles-stroke-width') || 10,
           text: function(value) {
             return value + ($this.data('circles-additional-text') || ''); },
-          colors: [$this.data('circles-bg-color') || '#72c02c', $this.data('circles-fg-color') || '#eeeeee'],
+          colors: [$this.data('circles-bg-color') || '#00bed6', $this.data('circles-fg-color') || '#eeeeee'],
           duration: $this.data('circles-duration') || 1000,
           wrpClass: self.config['wrpClass'],
           textClass: self.config['textClass'],
