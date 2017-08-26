@@ -1,0 +1,80 @@
+{% extends "master.html.twig" %}
+
+{% block meta %}
+    {% include "SuluWebsiteBundle:Extension:seo.html.twig" with {
+        "seo": extension.seo|default([]),
+        "content": content|default([]),
+        "urls": urls|default([]),
+        "shadowBaseLocale": shadowBaseLocale|default(),
+        "defaultLocale": request.defaultLocale|default('de')
+    } %}
+{% endblock %}
+
+{% block content %}
+    <p class="lead">{{ content.title }}</p>
+
+    <p>user</p>
+    {{ sulu_resolve_user(changer).contact.fullName }}
+
+    <p>breadcumb</p>
+    {% for item in sulu_breadcrumb(uuid) %}
+        <a href="{{ sulu_content_path(item.url) }}">{{ item.title }}</a>
+    {% endfor %}
+
+    <div property="blocks" typeof="collection">
+        {% for block in content.blocks %}
+            <div rel="blocks" typeof="block">
+                {% if block.type == 'selection' %}
+                    <ul property="multiple">
+                        {% for value in block.multiple %}
+                            <li>{{ value }}</li>
+                        {% endfor %}
+                    </ul>
+
+                    <p property="single">{{ block.single }}</p>
+                {% elseif block.type == 'editor_image' %}
+                    {% set viewBlock = view.blocks[loop.index - 1] %}
+                    {% if viewBlock.images is not null %}
+                        {% set displayOption = viewBlock.images.displayOption|default('top') %}
+                        {% if displayOption == 'top' %}
+                            {% set float = 'none' %}
+                        {% elseif displayOption == 'left' %}
+                            {% set float = 'left' %}
+                        {% elseif displayOption == 'right' %}
+                            {% set float = 'right' %}
+                        {% endif %}
+
+                        {% if float is defined %}
+                            {% for image in block.images %}
+                                {% if float is defined %}
+                                    <img src="{{ image.thumbnails['170x170'] }}"
+                                         alt="{{ image.name }}"
+                                         style="float: {{ float }}"/>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    {% endif %}
+                    <div property="article">{{ block.article|default('')|raw }}</div>
+                    {% if viewBlock.images is not null and float is not defined %}
+                        {% for image in block.images %}
+                            <img src="{{ image.thumbnails['170x170'] }}"
+                                 alt="{{ image.name }}"/>
+                        {% endfor %}
+                    {% endif %}
+                {% else %}
+                    <div property="article">{{ block.article|default('')|raw }}</div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+
+
+    <form action="{{ path('sulu_search.website_search') }}" method="GET">
+        <input name="q" type="text" placeholder="Search" />
+        <input type="submit" value="Go" />
+    </form>
+    
+    <div property="article">
+        {{ content.article|raw }}
+    </div>
+{% endblock %}
