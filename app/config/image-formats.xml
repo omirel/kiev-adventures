@@ -53,4 +53,21 @@
             <option name="png_compression_level">6</option>
         </options>
     </format>
+    <format>
+        <name>725x725</name>
+        <commands>
+            <command>
+                <action>resize</action>
+                <parameters>
+                    <parameter name="x">725</parameter>
+                    <parameter name="y">725</parameter>
+                </parameters>
+            </command>
+        </commands>
+        <!-- optional compression for this format -->
+        <options>
+            <option name="jpeg_quality">80</option>
+            <option name="png_compression_level">6</option>
+        </options>
+    </format>
 </formats>
