@@ -36,7 +36,7 @@ ssh-copy-id -i .ssh/ka_id_rsa.pub root@185.162.249.225
 
 __Docker deployment__
 ```
-docker exec -it kiev-adventures-web bin/mage deploy to:production
+docker exec -it kiev-adventures-web bin/mage deploy production
 ```
 
 __Linux:__
