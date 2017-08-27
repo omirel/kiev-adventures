@@ -11,14 +11,37 @@
 {% endblock %}
 
 {% block content %}
-    <p class="lead">{{ content.title }}</p>
+    <!-- Promo Block -->
+    <section class="g-min-height-100vhg-flex-centered g-bg-secondary g-pos-rel">
+        <div class="container g-pt-100 g-pb-70">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md-8 col-lg-6 flex-md-unordered g-mb-30">
+                    <div class="g-pos-rel">
+                        {% set media = sulu_resolve_media(content.images[0], 'en') %}
+                        {% set url = sulu_get_media_url(media, 'inline') %}
+                        <img class="img-fluid w-100" src="{{ url }}" title="{{ media.title }}" alt="{{ media.title }}" />
+                    </div>
+                </div>
 
-    <form action="{{ path('sulu_search.website_search') }}" method="GET">
-        <input name="q" type="text" placeholder="Search" />
-        <input type="submit" value="Go" />
-    </form>
-    
-    <div property="article">
-        {{ content.article|raw }}
-    </div>
+                <div class="col-md-4 flex-md-first g-mb-30">
+                    <div class="g-mb-30">
+                        <h1 class="g-color-primary g-font-weight-400 g-font-size-40 mb-0">Kiev</h1>
+                        <h2 class="g-color-dark g-font-weight-300 g-font-size-75 g-line-height-1 mb-4">Adventures</h2>
+
+                        <p class="lead">{{ content.title }}</p>
+
+                        <form action="{{ path('sulu_search.website_search') }}" method="GET">
+                            <input name="q" type="text" placeholder="Search" />
+                            <input type="submit" value="Go" />
+                        </form>
+
+                        <div property="article">
+                            {{ content.article|raw }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Promo Block -->
 {% endblock %}
