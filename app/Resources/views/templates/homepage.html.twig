@@ -17,9 +17,7 @@
             <div class="row justify-content-between align-items-center">
                 <div class="col-md-8 col-lg-6 flex-md-unordered g-mb-30">
                     <div class="g-pos-rel">
-                        {% set media = sulu_resolve_media(content.images[0], 'en') %}
-                        {% set url = sulu_get_media_url(media, 'inline') %}
-                        <img class="img-fluid w-100" src="{{ url }}" title="{{ media.title }}" alt="{{ media.title }}" />
+                        <img class="img-fluid w-100" src="{{ content.images[0].thumbnails['725x725'] }}" title="{{ content.images[0].title }}" alt="{{ content.images[0].title }}" />
                     </div>
                 </div>
 
