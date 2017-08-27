@@ -1,0 +1,221 @@
+{% extends "master.html.twig" %}
+
+{% block meta %}
+    {% include "SuluWebsiteBundle:Extension:seo.html.twig" with {
+        "seo": extension.seo|default([]),
+        "content": content|default([]),
+        "urls": urls|default([]),
+        "shadowBaseLocale": shadowBaseLocale|default(),
+        "defaultLocale": request.defaultLocale|default('de')
+    } %}
+{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="../../../assets/vendor/icon-line/css/simple-line-icons.css">
+{% endblock %}
+
+{% block content %}
+    <!-- Breadcrumb -->
+    <section class="g-my-30">
+        <div class="container">
+            <ul class="u-list-inline">
+                {% for item in sulu_breadcrumb(uuid) %}
+                    <li class="list-inline-item g-mr-7">
+                        <a class="u-link-v5 g-color-main g-color-primary--hover" href="{{ sulu_content_path(item.url) }}">{{ item.title }}</a>
+                        <i class="fa fa-angle-right g-ml-7"></i>
+                    </li>
+                {% endfor %}
+                <li class="list-inline-item g-color-primary">
+                    <span>Location Reviews</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- End Breadcrumb -->
+
+    <section class="g-mb-100">
+        <div class="container">
+            <div class="row">
+                <!-- Profile Sidebar -->
+                <div class="col-lg-3 g-mb-50 g-mb-0--lg">
+                    <!-- User Image -->
+                    <div class="u-block-hover g-pos-rel">
+                        <figure>
+                            <img class="img-fluid w-100 u-block-hover__main--zoom-v1" src="{{ content.images[0].thumbnails['400x450'] }}" alt="Image Description">
+                        </figure>
+
+                        <!-- Figure Caption -->
+                        <figcaption class="u-block-hover__additional--fade g-bg-black-opacity-0_5 g-pa-30">
+                            <div class="u-block-hover__additional--fade u-block-hover__additional--fade-up g-flex-middle">
+                                <!-- Figure Social Icons -->
+                                <ul class="list-inline text-center g-flex-middle-item--bottom g-mb-20">
+                                    <li class="list-inline-item align-middle g-mx-7">
+                                        <a class="u-icon-v1 u-icon-size--md g-color-white" href="#">
+                                            <i class="icon-note u-line-icon-pro"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item align-middle g-mx-7">
+                                        <a class="u-icon-v1 u-icon-size--md g-color-white" href="#">
+                                            <i class="icon-notebook u-line-icon-pro"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item align-middle g-mx-7">
+                                        <a class="u-icon-v1 u-icon-size--md g-color-white" href="#">
+                                            <i class="icon-settings u-line-icon-pro"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- End Figure Social Icons -->
+                            </div>
+                        </figcaption>
+                        <!-- End Figure Caption -->
+
+                        <!-- User Info -->
+                        <span class="g-pos-abs g-top-20 g-left-0">
+                  <a class="btn btn-sm u-btn-primary rounded-0" href="#">{{ content.title }}</a>
+                  <small class="d-block g-bg-black g-color-white g-pa-5">Review</small>
+                </span>
+                        <!-- End User Info -->
+                    </div>
+                    <!-- User Image -->
+
+                    <!-- Sidebar Navigation -->
+                    <!-- End Sidebar Navigation -->
+
+                    <!-- Project Progress -->
+                    <div class="card border-0 rounded-0 g-mb-50">
+                        <!-- Panel Header -->
+                        <div class="card-header d-flex align-items-center justify-content-between g-bg-gray-light-v5 border-0 g-mb-15">
+                            <h3 class="h6 mb-0">
+                                <i class="icon-layers g-pos-rel g-top-1 g-mr-5"></i> {{ content.location.title }}
+                                {{ content.location.street }}
+                                {{ content.location.number }}
+                                {{ content.location.town }}
+                                {{ content.location.country }}
+                                {{ content.location.mapProvider }}
+                                {{ content.location.long }}
+                                {{ content.location.lat }}
+                                {{ content.location.zoom }}
+                            </h3>
+
+                        </div>
+                        <!-- End Panel Header -->
+
+                        <!-- Panel Body -->
+                        <div class="js-scrollbar card-block u-info-v1-1 g-bg-white-gradient-v1--after g-height-300 g-pa-0 mCustomScrollbar _mCS_1 mCS-autoHide" style="overflow: visible;"><div id="mCSB_1" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" style="max-height: none;" tabindex="0"><div id="mCSB_1_container" class="mCSB_container" style="position:relative; top:0; left:0;" dir="ltr">
+                                    <!-- Web Design -->
+                                    <div class="g-mb-20">
+                                        <h6 class="g-mb-10">Ambient <span class="float-right g-ml-10">68%</span></h6>
+                                        <div class="js-hr-progress-bar progress g-bg-black-opacity-0_1 rounded-0 g-mb-5">
+                                            <div class="js-hr-progress-bar-indicator progress-bar g-bg-cyan u-progress-bar--xs" role="progressbar" style="width: 68%;" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <!-- End Web Design -->
+
+                                    <!-- Unify Project -->
+                                    <div class="g-mb-20">
+                                        <h6 class="g-mb-10">Drinks & Food <span class="float-right g-ml-10">62%</span></h6>
+                                        <div class="js-hr-progress-bar progress g-bg-black-opacity-0_1 rounded-0 g-mb-5">
+                                            <div class="js-hr-progress-bar-indicator progress-bar g-bg-pink u-progress-bar--xs" role="progressbar" style="width: 62%;" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <!-- End Unify Project -->
+
+                                    <!-- Unify Project -->
+                                    <div class="g-mb-20">
+                                        <h6 class="g-mb-10">Social <span class="float-right g-ml-10">93%</span></h6>
+                                        <div class="js-hr-progress-bar progress g-bg-black-opacity-0_1 rounded-0 g-mb-5">
+                                            <div class="js-hr-progress-bar-indicator progress-bar g-bg-primary u-progress-bar--xs" role="progressbar" style="width: 93%;" aria-valuenow="93" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <!-- End Unify Project -->
+                                </div></div><div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-minimal-dark mCSB_scrollTools_vertical" style="display: block;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 50px; display: block; height: 208px; max-height: 266px; top: 0px;"><div class="mCSB_dragger_bar" style="line-height: 50px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div>
+                        <!-- End Panel Body -->
+                    </div>
+                    <!-- End Project Progress -->
+                </div>
+                <!-- End Profile Sidebar -->
+
+                <!-- Profle Content -->
+                <div class="col-lg-9">
+                    <!-- Reviews (Option 1) -->
+                    <div class="card border-0 g-mb-40">
+                        <!-- Panel Header -->
+                        <div class="card-header d-flex align-items-center justify-content-between g-bg-gray-light-v5 border-0 g-mb-15">
+                            <h3 class="h6 mb-0">
+                                <i class="icon-heart g-pos-rel g-top-1 g-mr-5"></i> Reviews
+                            </h3>
+                            <div class="dropdown g-mb-10 g-mb-0--md">
+                    <span class="d-block g-color-primary--hover g-cursor-pointer g-mr-minus-5 g-pa-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="icon-options-vertical g-pos-rel g-top-1"></i>
+                    </span>
+                                <div class="dropdown-menu dropdown-menu-right rounded-0 g-mt-10">
+                                    <a class="dropdown-item g-px-10" href="#">
+                                        <i class="icon-layers g-font-size-12 g-color-gray-dark-v5 g-mr-5"></i> Projects
+                                    </a>
+                                    <a class="dropdown-item g-px-10" href="#">
+                                        <i class="icon-wallet g-font-size-12 g-color-gray-dark-v5 g-mr-5"></i> Wallets
+                                    </a>
+                                    <a class="dropdown-item g-px-10" href="#">
+                                        <i class="icon-fire g-font-size-12 g-color-gray-dark-v5 g-mr-5"></i> Reports
+                                    </a>
+                                    <a class="dropdown-item g-px-10" href="#">
+                                        <i class="icon-settings g-font-size-12 g-color-gray-dark-v5 g-mr-5"></i> Users Setting
+                                    </a>
+
+                                    <div class="dropdown-divider"></div>
+
+                                    <a class="dropdown-item g-px-10" href="#">
+                                        <i class="icon-plus g-font-size-12 g-color-gray-dark-v5 g-mr-5"></i> View More
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Panel Header -->
+
+                        <!-- Panel Body -->
+                        <div class="card-block g-pa-0">
+                            <div class="media g-brd-around g-brd-gray-light-v4 g-pa-20 g-mb-20">
+                                <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-2 g-mr-20" src="{{ content.images[0].thumbnails['100x100'] }}" alt="Image Description">
+                                <div class="media-body">
+                                    <div class="d-sm-flex justify-content-sm-between align-items-sm-center g-mb-15 g-mb-10--sm">
+                                        <header class="g-mb-5 g-mb-0--sm">
+                                            <h5 class="h4 g-font-weight-300 g-mr-10 g-mb-5">{{ sulu_resolve_user(changer).contact.fullName }}</h5>
+                                            <div class="js-rating g-color-yellow" data-rating="5"><div class="g-rating" style="display: inline-block; position: relative; z-index: 1; white-space: nowrap; margin-left: -2px; margin-right: -2px;"><div class="g-rating-forward" style="position: absolute; left: 0px; top: 0px; height: 100%; overflow: hidden; width: 100%;"><i class="fa fa-star" style="margin-left: 2px; margin-right: 2px;"></i><i class="fa fa-star" style="margin-left: 2px; margin-right: 2px;"></i><i class="fa fa-star" style="margin-left: 2px; margin-right: 2px;"></i><i class="fa fa-star" style="margin-left: 2px; margin-right: 2px;"></i><i class="fa fa-star" style="margin-left: 2px; margin-right: 2px;"></i></div><div class="g-rating-backward" style="position: relative; z-index: 1;"><i class="fa fa-star-o" style="margin-left: 2px; margin-right: 2px;"></i><i class="fa fa-star-o" style="margin-left: 2px; margin-right: 2px;"></i><i class="fa fa-star-o" style="margin-left: 2px; margin-right: 2px;"></i><i class="fa fa-star-o" style="margin-left: 2px; margin-right: 2px;"></i><i class="fa fa-star-o" style="margin-left: 2px; margin-right: 2px;"></i></div></div></div>
+                                        </header>
+                                        <div class="text-nowrap g-font-size-12">
+                                            <span class="text-muted">{{ content.date }}</span>
+                                        </div>
+                                    </div>
+
+                                    <p>{{ content.article|raw }}</p>
+
+                                    <ul class="list-inline my-0">
+                                        <li class="list-inline-item g-mr-20">
+                                            <a class="g-color-gray-dark-v5 g-text-underline--none--hover" href="#">
+                                                <i class="icon-like g-pos-rel g-top-1 g-mr-3"></i> 214
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item g-mr-20">
+                                            <a class="g-color-gray-dark-v5 g-text-underline--none--hover" href="#">
+                                                <i class="icon-dislike g-pos-rel g-top-1 g-mr-3"></i> 35
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item g-mr-20">
+                                            <a class="g-color-gray-dark-v5 g-text-underline--none--hover" href="#">
+                                                <i class="icon-share g-pos-rel g-top-1 g-mr-3"></i> 52
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Panel Body -->
+                    </div>
+                    <!-- End Reviews (Option 1) -->
+                </div>
+                <!-- End Profle Content -->
+            </div>
+        </div>
+    </section>
+{% endblock %}

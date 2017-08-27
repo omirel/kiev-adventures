@@ -1,0 +1,90 @@
+<?xml version="1.0" ?>
+<template xmlns="http://schemas.sulu.io/template/template"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd">
+
+    <key>location</key>
+
+    <view>templates/location</view>
+    <controller>SuluWebsiteBundle:Default:index</controller>
+    <cacheLifetime>2400</cacheLifetime>
+
+    <meta>
+        <title lang="en">Location</title>
+        <title lang="de">Lokation</title>
+    </meta>
+
+    <properties>
+        <section name="highlight">
+            <properties>
+                <property name="title" type="text_line" mandatory="true">
+                    <meta>
+                        <title lang="en">Title</title>
+                        <title lang="de">Titel</title>
+                    </meta>
+                    <params>
+                        <param name="headline" value="true"/>
+                    </params>
+
+                    <tag name="sulu.rlp.part"/>
+                </property>
+
+                <property name="url" type="resource_locator" mandatory="true">
+                    <meta>
+                        <title lang="en">Resourcelocator</title>
+                        <title lang="de">Adresse</title>
+                    </meta>
+
+                    <tag name="sulu.rlp"/>
+                </property>
+            </properties>
+        </section>
+
+        <section name="basics">
+            <properties>
+                <property name="location" type="location">
+                    <meta>
+                        <title lang="en">Location</title>
+                        <title lang="de">Lokation</title>
+                    </meta>
+                </property>
+
+                <property name="date" type="date">
+                    <meta>
+                        <title lang="en">Date</title>
+                        <title lang="de">Datum</title>
+                    </meta>
+                </property>
+
+                <property name="tags" type="tag_list">
+                    <meta>
+                        <title lang="en">Tags</title>
+                        <title lang="de">Tags</title>
+                    </meta>
+                </property>
+
+                <property name="images" type="media_selection">
+                    <meta>
+                        <title lang="en">Images</title>
+                        <title lang="de">Bilder</title>
+                    </meta>
+
+                    <params>
+                        <param name="types" value="image"/>
+                        <param name="formats" type="collection">
+                            <param name="425x250" />
+                        </param>
+                    </params>
+                </property>
+
+                <property name="article" type="text_editor" colspan="9">
+                    <meta>
+                        <title lang="de">Artikel</title>
+                        <title lang="en">Article</title>
+                    </meta>
+                </property>
+            </properties>
+        </section>
+
+    </properties>
+</template>
