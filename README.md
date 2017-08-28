@@ -39,6 +39,11 @@ __Docker deployment__
 docker exec -it kiev-adventures-web bin/mage deploy production
 ```
 
+__Generate Sitemap__
+```
+docker exec -it kiev-adventures-web php bin/adminconsole sulu:website:dump-sitemap
+```
+
 __Linux:__
 
 ```
