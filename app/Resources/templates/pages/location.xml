@@ -86,5 +86,175 @@
             </properties>
         </section>
 
+        <section name="rating">
+            <properties>
+                <property name="rating_location" type="single_select">
+                    <meta>
+                        <title lang="en">Location</title>
+                        <title lang="de">Location</title>
+                    </meta>
+                    <params>
+                        <param name="values" type="collection">
+                            <param name="1">
+                                <meta>
+                                    <title lang="en">1</title>
+                                </meta>
+                            </param>
+                            <param name="1.5">
+                                <meta>
+                                    <title lang="en">1.5</title>
+                                </meta>
+                            </param>
+                            <param name="2">
+                                <meta>
+                                    <title lang="en">2</title>
+                                </meta>
+                            </param>
+                            <param name="2.5">
+                                <meta>
+                                    <title lang="en">2.5</title>
+                                </meta>
+                            </param>
+                            <param name="3">
+                                <meta>
+                                    <title lang="en">3</title>
+                                </meta>
+                            </param>
+                            <param name="3.5">
+                                <meta>
+                                    <title lang="en">3.5</title>
+                                </meta>
+                            </param>
+                            <param name="4">
+                                <meta>
+                                    <title lang="en">4</title>
+                                </meta>
+                            </param>
+                            <param name="4.5">
+                                <meta>
+                                    <title lang="en">4.5</title>
+                                </meta>
+                            </param>
+                            <param name="5">
+                                <meta>
+                                    <title lang="en">5</title>
+                                </meta>
+                            </param>
+                        </param>
+                    </params>
+                </property>
+                <property name="rating_food" type="single_select">
+                    <meta>
+                        <title lang="en">Food and Drinks</title>
+                        <title lang="de">Essen und Trinken</title>
+                    </meta>
+                    <params>
+                        <param name="values" type="collection">
+                            <param name="1">
+                                <meta>
+                                    <title lang="en">1</title>
+                                </meta>
+                            </param>
+                            <param name="1.5">
+                                <meta>
+                                    <title lang="en">1.5</title>
+                                </meta>
+                            </param>
+                            <param name="2">
+                                <meta>
+                                    <title lang="en">2</title>
+                                </meta>
+                            </param>
+                            <param name="2.5">
+                                <meta>
+                                    <title lang="en">2.5</title>
+                                </meta>
+                            </param>
+                            <param name="3">
+                                <meta>
+                                    <title lang="en">3</title>
+                                </meta>
+                            </param>
+                            <param name="3.5">
+                                <meta>
+                                    <title lang="en">3.5</title>
+                                </meta>
+                            </param>
+                            <param name="4">
+                                <meta>
+                                    <title lang="en">4</title>
+                                </meta>
+                            </param>
+                            <param name="4.5">
+                                <meta>
+                                    <title lang="en">4.5</title>
+                                </meta>
+                            </param>
+                            <param name="5">
+                                <meta>
+                                    <title lang="en">5</title>
+                                </meta>
+                            </param>
+                        </param>
+                    </params>
+                </property>
+                <property name="rating_socialising" type="single_select">
+                    <meta>
+                        <title lang="en">Socialising</title>
+                        <title lang="de">Socialising</title>
+                    </meta>
+                    <params>
+                        <param name="values" type="collection">
+                            <param name="1">
+                                <meta>
+                                    <title lang="en">1</title>
+                                </meta>
+                            </param>
+                            <param name="1.5">
+                                <meta>
+                                    <title lang="en">1.5</title>
+                                </meta>
+                            </param>
+                            <param name="2">
+                                <meta>
+                                    <title lang="en">2</title>
+                                </meta>
+                            </param>
+                            <param name="2.5">
+                                <meta>
+                                    <title lang="en">2.5</title>
+                                </meta>
+                            </param>
+                            <param name="3">
+                                <meta>
+                                    <title lang="en">3</title>
+                                </meta>
+                            </param>
+                            <param name="3.5">
+                                <meta>
+                                    <title lang="en">3.5</title>
+                                </meta>
+                            </param>
+                            <param name="4">
+                                <meta>
+                                    <title lang="en">4</title>
+                                </meta>
+                            </param>
+                            <param name="4.5">
+                                <meta>
+                                    <title lang="en">4.5</title>
+                                </meta>
+                            </param>
+                            <param name="5">
+                                <meta>
+                                    <title lang="en">5</title>
+                                </meta>
+                            </param>
+                        </param>
+                    </params>
+                </property>
+            </properties>
+        </section>
+
     </properties>
 </template>
