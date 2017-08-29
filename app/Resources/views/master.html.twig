@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,33 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
+    {% block meta %}{% endblock %}
+
     <!-- Favicon -->
     <link rel="shortcut icon" href="../../../favicon.ico">
 
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700">
-
-    <!-- CSS Global Compulsory -->
-    <link rel="stylesheet" href="../../../assets/vendor/bootstrap/bootstrap.min.css">
-
-    <!-- CSS Implementing Plugins -->
-    <link rel="stylesheet" href="../../../assets/vendor/icon-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../../assets/vendor/icon-line-pro/style.css">
-    <link rel="stylesheet" href="../../../assets/vendor/icon-hs/style.css">
-    <link rel="stylesheet" href="../../../assets/vendor/slick-carousel/slick/slick.css">
-    <link rel="stylesheet" href="../../../assets/vendor/hs-megamenu/src/hs.megamenu.css">
-    <link rel="stylesheet" href="../../../assets/vendor/hamburgers/hamburgers.min.css">
-    <link rel="stylesheet" href="../../../assets/vendor/animate.css">
-
-    <!-- CSS Unify -->
-    <link rel="stylesheet" href="../../../assets/css/unify.css">
-
-    <!-- CSS Customization -->
-    <link rel="stylesheet" href="../../../assets/css/custom.css">
-
-    {% block meta %}{% endblock %}
-
-    {% block style %}{% endblock %}
+    {% block style %}
+    <!-- CSS Assetic2 -->
+    {% stylesheets
+    '//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700'
+    'assets/vendor/bootstrap/bootstrap.min.css'
+    'assets/vendor/icon-awesome/css/font-awesome.min.css'
+    'assets/vendor/icon-line-pro/style.css'
+    'assets/vendor/icon-hs/style.css'
+    'assets/vendor/slick-carousel/slick/slick.css'
+    'assets/vendor/hs-megamenu/src/hs.megamenu.css'
+    'assets/vendor/hamburgers/hamburgers.min.css'
+    'assets/vendor/animate.css'
+    'assets/css/unify.css'
+    'assets/css/custom.css'
+    'assets/vendor/icon-line/css/simple-line-icons.css'
+    filter='cssrewrite' filter='uglifycss' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+    {% endblock %}
 </head>
 
 <body>
@@ -877,28 +873,30 @@
     <!-- End Copyright Footer -->
 </main>
 
-<!-- JS Global Compulsory -->
 {% block javascripts %}
-<script src="../../../assets/vendor/jquery/jquery.min.js"></script>
-<script src="../../../assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
-<script src="../../../assets/vendor/tether.min.js"></script>
-<script src="../../../assets/vendor/bootstrap/bootstrap.min.js"></script>
+    <!-- JS Asetic -->
+    {% javascripts
+    'assets/vendor/jquery/jquery.min.js'
+    'assets/vendor/jquery-migrate/jquery-migrate.min.js'
+    'assets/vendor/tether.min.js'
+    'assets/vendor/bootstrap/bootstrap.min.js'
 
-<!-- JS Implementing Plugins -->
-<script src="../../../assets/vendor/appear.js"></script>
-<script src="../../../assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
-<script src="../../../assets/vendor/masonry/dist/masonry.pkgd.min.js"></script>
-<script src="../../../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-<script src="../../../assets/vendor/slick-carousel/slick/slick.js"></script>
-<script src="../../../assets/vendor/jquery.countdown.min.js"></script>
+    'assets/vendor/appear.js'
+    'assets/vendor/hs-megamenu/src/hs.megamenu.js'
+    'assets/vendor/masonry/dist/masonry.pkgd.min.js'
+    'assets/vendor/imagesloaded/imagesloaded.pkgd.min.js'
+    'assets/vendor/slick-carousel/slick/slick.js'
+    'assets/vendor/jquery.countdown.min.js'
 
-<!-- JS Unify -->
-<script src="../../../assets/js/hs.core.js"></script>
-<script src="../../../assets/js/components/hs.header.js"></script>
-<script src="../../../assets/js/helpers/hs.hamburgers.js"></script>
-<script src="../../../assets/js/components/hs.carousel.js"></script>
-<script src="../../../assets/js/components/hs.countdown.js"></script>
-<script src="../../../assets/js/components/hs.onscroll-animation.js"></script>
+    'assets/js/hs.core.js'
+    'assets/js/components/hs.header.js'
+    'assets/js/helpers/hs.hamburgers.js'
+    'assets/js/components/hs.carousel.js'
+    'assets/js/components/hs.countdown.js'
+    'assets/js/components/hs.onscroll-animation.js'
+    filter='uglifyjs2' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
 {% endblock %}
 
 <!-- JS Plugins Init. -->
