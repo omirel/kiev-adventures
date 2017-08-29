@@ -4,9 +4,9 @@ services:
     build: docker/apache-php7-dev
     container_name: kiev-adventures-web
     environment:
-      - SYMFONY_ENV=prod
+      - SYMFONY_ENV=dev
     ports:
-      - "8000:80"
+      - "80:80"
     links:
       - 'mysql:db'
     volumes:
