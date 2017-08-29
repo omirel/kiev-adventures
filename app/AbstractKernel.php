@@ -33,6 +33,7 @@ abstract class AbstractKernel extends SuluKernel
             new Sulu\Bundle\CoreBundle\SuluCoreBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle(),
+            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
 
             // doctrine extensions
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
