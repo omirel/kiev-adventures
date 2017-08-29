@@ -16,9 +16,11 @@
         <div class="container g-pt-100 g-pb-70">
             <div class="row justify-content-between align-items-center">
                 <div class="col-md-8 col-lg-6 flex-md-unordered g-mb-30">
+                    {% if content.images[0] is defined %}
                     <div class="g-pos-rel">
                         <img class="img-fluid w-100" src="{{ content.images[0].thumbnails['725x725'] }}" title="{{ content.images[0].title }}" alt="{{ content.images[0].title }}" />
                     </div>
+                    {% endif %}
                 </div>
 
                 <div class="col-md-4 flex-md-first g-mb-30">
