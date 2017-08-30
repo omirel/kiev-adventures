@@ -17,7 +17,8 @@
 
     <properties>
         <section name="highlight">
-            <xi:include href="highlight-properties.xml"/>
+            <xi:include href="highlight-properties.xml" xpointer="xmlns(sulu=http://schemas.sulu.io/template/template)
+                      xpointer(/sulu:template/sulu:properties)"/>
         </section>
 
         <block name="blogContent" default-type="text">

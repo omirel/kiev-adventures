@@ -14,6 +14,15 @@ libpng12-dev libxml2-dev zlib1g-dev libicu-dev zip git
 RUN apt-get install -qy \
     mysql-client
 
+RUN apt-get install -qy \
+    nodejs
+
+RUN apt-get install -qy \
+    npm
+
+RUN npm install uglifycss -g
+RUN npm install uglify-js2 -g
+
 RUN docker-php-ext-install opcache mysqli pdo pdo_mysql intl
 
 # Install APCu

@@ -1,66 +1,77 @@
 <?xml version="1.0" ?>
-<properties xmlns="http://schemas.sulu.io/template/template"
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.1.xsd">
+<template xmlns="http://schemas.sulu.io/template/template"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.1.xsd">
 
-    <property name="title" type="text_line" mandatory="true" colspan="6">
-        <meta>
-            <title lang="en">Title</title>
-            <title lang="de">Titel</title>
-        </meta>
-        <params>
-            <param name="headline" value="true"/>
-        </params>
-        <tag name="sulu.rlp.part"/>
-    </property>
+    <key>highlight-properties</key>
+    <view>templates/blog-single-item</view>
+    <controller>SuluWebsiteBundle:Default:index</controller>
 
-    <property name="url" type="resource_locator" mandatory="true" colspan="6">
-        <meta>
-            <title lang="en">Resourcelocator</title>
-            <title lang="de">Adresse</title>
-        </meta>
-        <tag name="sulu.rlp"/>
-    </property>
+    <meta>
+        <title lang="en">Highlight Properties</title>
+        <title lang="de">Highlight Properties</title>
+    </meta>
 
-    <property name="teaser" type="text_area">
-        <meta>
-            <title lang="en">Teaser</title>
-            <title lang="de">Anreisser</title>
-        </meta>
-    </property>
+    <properties>
+        <property name="title" type="text_line" mandatory="true" colspan="6">
+            <meta>
+                <title lang="en">Title</title>
+                <title lang="de">Titel</title>
+            </meta>
+            <params>
+                <param name="headline" value="true"/>
+            </params>
+            <tag name="sulu.rlp.part"/>
+        </property>
 
-    <property name="createdAt" type="date" mandatory="true" colspan="4">
-        <meta>
-            <title lang="en">Creation Date</title>
-            <title lang="de">Erstellungs-Datum</title>
-        </meta>
-    </property>
+        <property name="url" type="resource_locator" mandatory="true" colspan="6">
+            <meta>
+                <title lang="en">Resourcelocator</title>
+                <title lang="de">Adresse</title>
+            </meta>
+            <tag name="sulu.rlp"/>
+        </property>
 
-    <property name="startDate" type="date" colspan="4">
-        <meta>
-            <title lang="en">Published from</title>
-            <title lang="de">Erscheint von</title>
-        </meta>
-    </property>
+        <property name="teaser" type="text_area">
+            <meta>
+                <title lang="en">Teaser</title>
+                <title lang="de">Anreisser</title>
+            </meta>
+        </property>
 
-    <property name="endDate" type="date" colspan="4">
-        <meta>
-            <title lang="en">Published to</title>
-            <title lang="de">Erscheint bis</title>
-        </meta>
-    </property>
+        <property name="createdAt" type="date" mandatory="true" colspan="4">
+            <meta>
+                <title lang="en">Creation Date</title>
+                <title lang="de">Erstellungs-Datum</title>
+            </meta>
+        </property>
 
-    <property name="tags" type="tag_list">
-        <meta>
-            <title lang="en">Tags</title>
-            <title lang="de">Tags</title>
-        </meta>
-    </property>
+        <property name="startDate" type="date" colspan="4">
+            <meta>
+                <title lang="en">Published from</title>
+                <title lang="de">Erscheint von</title>
+            </meta>
+        </property>
 
-    <property name="mainImage" type="media_selection" mandatory="true">
-        <meta>
-            <title lang="en">Main Image</title>
-            <title lang="de">Hauptbild</title>
-        </meta>
-    </property>
-</properties>
+        <property name="endDate" type="date" colspan="4">
+            <meta>
+                <title lang="en">Published to</title>
+                <title lang="de">Erscheint bis</title>
+            </meta>
+        </property>
+
+        <property name="tags" type="tag_list">
+            <meta>
+                <title lang="en">Tags</title>
+                <title lang="de">Tags</title>
+            </meta>
+        </property>
+
+        <property name="mainImage" type="media_selection" mandatory="true">
+            <meta>
+                <title lang="en">Main Image</title>
+                <title lang="de">Hauptbild</title>
+            </meta>
+        </property>
+    </properties>
+</template>
