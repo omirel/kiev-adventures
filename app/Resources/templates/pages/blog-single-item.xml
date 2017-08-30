@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<template xmlns="http://schemas.sulu.io/template/template"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+          xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd">
+
+    <key>blog-single-item</key>
+
+    <view>templates/blog-single-item</view>
+    <controller>SuluWebsiteBundle:Default:index</controller>
+    <cacheLifetime>2400</cacheLifetime>
+
+    <meta>
+        <title lang="en">Blog Single Item</title>
+        <title lang="de">Blog Einzelseite</title>
+    </meta>
+
+    <properties>
+        <section name="highlight">
+            <xi:include href="highlight-properties.xml"/>
+        </section>
+
+        <block name="blogContent" default-type="text">
+            <meta>
+                <title lang="en">Blog Content</title>
+                <title lang="de">Blog Inhalte</title>
+            </meta>
+
+            <types>
+                <type name="text">
+                    <meta>
+                        <title lang="en">Text</title>
+                    </meta>
+                    <properties>
+                        <property name="article" type="text_editor"/>
+                    </properties>
+                </type>
+                <type name="quote">
+                    <meta>
+                        <title lang="en">Quote</title>
+                        <title lang="de">Zitat</title>
+                    </meta>
+                    <properties>
+                        <property name="quote" type="text_area"/>
+                    </properties>
+                </type>
+                <type name="textWithImage">
+                    <meta>
+                        <title lang="en">Text with Image</title>
+                    </meta>
+                    <properties>
+                        <property name="images" type="media_selection"/>
+                        <property name="article" type="text_editor"/>
+                    </properties>
+                </type>
+                <type name="author">
+                    <meta>
+                        <title lang="en">Author</title>
+                    </meta>
+
+                    <properties>
+                        <property name="author1" type="contact"/>
+                    </properties>
+                </type>
+            </types>
+        </block>
+
+    </properties>
+</template>
