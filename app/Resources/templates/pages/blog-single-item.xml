@@ -27,12 +27,13 @@
             </meta>
 
             <types>
-                <type name="text">
+                <type name="author">
                     <meta>
-                        <title lang="en">Text</title>
+                        <title lang="en">Author</title>
                     </meta>
+
                     <properties>
-                        <property name="article" type="text_editor"/>
+                        <property name="article_author" type="contact"/>
                     </properties>
                 </type>
                 <type name="quote">
@@ -42,6 +43,24 @@
                     </meta>
                     <properties>
                         <property name="quote" type="text_area"/>
+                        <property name="quote_author" type="text_line"/>
+                    </properties>
+                </type>
+                <type name="blockquote">
+                    <meta>
+                        <title lang="en">Blockquote</title>
+                        <title lang="de">Auszeichnung</title>
+                    </meta>
+                    <properties>
+                        <property name="blockquote_text" type="text_area"/>
+                    </properties>
+                </type>
+                <type name="text">
+                    <meta>
+                        <title lang="en">Text</title>
+                    </meta>
+                    <properties>
+                        <property name="article" type="text_editor"/>
                     </properties>
                 </type>
                 <type name="textWithImage">
@@ -53,13 +72,12 @@
                         <property name="article" type="text_editor"/>
                     </properties>
                 </type>
-                <type name="author">
+                <type name="imageGallery">
                     <meta>
-                        <title lang="en">Author</title>
+                        <title lang="en">Image Gallery</title>
                     </meta>
-
                     <properties>
-                        <property name="author1" type="contact"/>
+                        <property name="images" type="media_selection"/>
                     </properties>
                 </type>
             </types>

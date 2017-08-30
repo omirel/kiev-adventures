@@ -3,13 +3,30 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://schemas.sulu.io/media/formats http://schemas.sulu.io/media/formats-1.0.xsd">
     <format>
-        <name>425x250</name>
+        <name>100x100</name>
         <commands>
             <command>
                 <action>resize</action>
                 <parameters>
-                    <parameter name="x">425</parameter>
-                    <parameter name="y">250</parameter>
+                    <parameter name="x">100</parameter>
+                    <parameter name="y">100</parameter>
+                </parameters>
+            </command>
+        </commands>
+        <!-- optional compression for this format -->
+        <options>
+            <option name="jpeg_quality">80</option>
+            <option name="png_compression_level">6</option>
+        </options>
+    </format>
+    <format>
+        <name>400x270</name>
+        <commands>
+            <command>
+                <action>resize</action>
+                <parameters>
+                    <parameter name="x">400</parameter>
+                    <parameter name="y">270</parameter>
                 </parameters>
             </command>
         </commands>
@@ -37,13 +54,13 @@
         </options>
     </format>
     <format>
-        <name>100x100</name>
+        <name>425x250</name>
         <commands>
             <command>
                 <action>resize</action>
                 <parameters>
-                    <parameter name="x">100</parameter>
-                    <parameter name="y">100</parameter>
+                    <parameter name="x">425</parameter>
+                    <parameter name="y">250</parameter>
                 </parameters>
             </command>
         </commands>
@@ -67,6 +84,23 @@
         <!-- optional compression for this format -->
         <options>
             <option name="jpeg_quality">80</option>
+            <option name="png_compression_level">6</option>
+        </options>
+    </format>
+    <format>
+        <name>900x900</name>
+        <commands>
+            <command>
+                <action>resize</action>
+                <parameters>
+                    <parameter name="x">900</parameter>
+                    <parameter name="y">900</parameter>
+                </parameters>
+            </command>
+        </commands>
+        <!-- optional compression for this format -->
+        <options>
+            <option name="jpeg_quality">65</option>
             <option name="png_compression_level">6</option>
         </options>
     </format>
