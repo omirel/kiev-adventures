@@ -37,13 +37,13 @@
 
         <div class="row no-gutters g-mx-minus-10">
             {% for page in content.smart_content %}
-            <div class="col-sm-6 col-lg-{{ view.pages.presentAs == 'two' ? '8' : '4' }} g-px-10 g-mb-20">
+            <div class="col-sm-6 col-lg-{{ view.smart_content.presentAs == 'two' ? '8' : '4' }} g-px-10 g-mb-20">
                 <!-- Projects -->
                 <div class="u-block-hover g-brd-around g-brd-gray-light-v4 g-color-black g-color-white--hover g-bg-cyan--hover text-center rounded g-transition-0_3 g-px-30 g-py-50">
                     {% if page.images|length > 0 %}
                     <img class="img-fluid u-block-hover__main--zoom-v1 mb-5" src="{{ page.images[0].thumbnails['425x250'] }}" alt="{{ page.images[0].title }}">
                     {% endif %}
-                    <span class="g-font-weight-600 g-font-size-12 text-uppercase">{{ page.location.city }} {{ page.tags|join(', ') }}</span>
+                    <span class="g-font-weight-600 g-font-size-12 text-uppercase">{{ page.location }} {{ page.tags|join(', ') }}</span>
                     <h3 class="h4 g-font-weight-600 mb-0">{{ page.title }}</h3>
 
                     <a class="u-link-v2" href="{{ sulu_content_path(page.url) }}"></a>
@@ -54,12 +54,12 @@
         </div>
 
         <ul class="pagination">
-            {% set page = view.pages.page %}
+            {% set page = view.smart_content.page %}
 
             {% if page-1 >= 1 %}
                 <li><a href="{{ sulu_content_path(content.url) }}?p={{ page-1 }}">&laquo;</a></li>
             {% endif %}
-            {% if view.smartcontent.hasNextPage %}
+            {% if view.smart_content.hasNextPage %}
                 <li><a href="{{ sulu_content_path(content.url) }}?p={{ page+1 }}">&raquo;</a></li>
             {% endif %}
         </ul>

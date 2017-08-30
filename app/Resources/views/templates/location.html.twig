@@ -37,7 +37,9 @@
                     <!-- User Image -->
                     <div class="u-block-hover g-pos-rel">
                         <figure>
+                            {% if content.images|length > 0 %}
                             <img class="img-fluid w-100 u-block-hover__main--zoom-v1" src="{{ content.images[0].thumbnails['400x450'] }}" alt="Image Description">
+                            {% endif %}
                         </figure>
 
                         <!-- Figure Caption -->
@@ -83,6 +85,7 @@
                         <!-- Panel Header -->
                         <div class="card-header d-flex align-items-center justify-content-between g-bg-gray-light-v5 border-0 g-mb-15">
                             <h3 class="h6 mb-0">
+                                {% if content.location is not null %}
                                 <i class="icon-layers g-pos-rel g-top-1 g-mr-5"></i> {{ content.location.title }}
                                 {{ content.location.street }}
                                 {{ content.location.number }}
@@ -92,6 +95,7 @@
                                 {{ content.location.long }}
                                 {{ content.location.lat }}
                                 {{ content.location.zoom }}
+                                {% endif %}
                             </h3>
 
                         </div>
@@ -100,23 +104,28 @@
                         <!-- Panel Body -->
                         <div class="js-scrollbar card-block u-info-v1-1 g-bg-white-gradient-v1--after g-height-300 g-pa-0 mCustomScrollbar _mCS_1 mCS-autoHide" style="overflow: visible;"><div id="mCSB_1" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" style="max-height: none;" tabindex="0"><div id="mCSB_1_container" class="mCSB_container" style="position:relative; top:0; left:0;" dir="ltr">
                                     <!-- Web Design -->
+                                    {% if content.rating_location matches '/^[-+]?[0-9]*\\.?[0-9]+$/' %}
                                     <div class="g-mb-20">
                                         <h6 class="g-mb-10">Location <span class="float-right g-ml-10">{{ content.rating_location }}</span></h6>
                                         <div class="js-hr-progress-bar progress g-bg-black-opacity-0_1 rounded-0 g-mb-5">
                                             <div class="js-hr-progress-bar-indicator progress-bar g-bg-primary u-progress-bar--xs" role="progressbar" style="width: {{ content.rating_location / 5 * 100 }}%;" aria-valuenow="{{ content.rating_location }}" aria-valuemin="0" aria-valuemax="5"></div>
                                         </div>
                                     </div>
+                                    {% endif %}
                                     <!-- End Web Design -->
 
                                     <!-- Unify Project -->
+                                    {% if content.rating_food matches '/^[-+]?[0-9]*\\.?[0-9]+$/' %}
                                     <div class="g-mb-20">
                                         <h6 class="g-mb-10">Food & Drinks <span class="float-right g-ml-10">{{ content.rating_food }}</span></h6>
                                         <div class="js-hr-progress-bar progress g-bg-black-opacity-0_1 rounded-0 g-mb-5">
                                             <div class="js-hr-progress-bar-indicator progress-bar g-bg-yellow u-progress-bar--xs" role="progressbar" style="width: {{ content.rating_food / 5 * 100 }}%;" aria-valuenow="{{ content.rating_food }}" aria-valuemin="0" aria-valuemax="5"></div>
                                         </div>
                                     </div>
+                                    {% endif %}
                                     <!-- End Unify Project -->
 
+                                    {% if content.rating_socialising matches '/^[-+]?[0-9]*\\.?[0-9]+$/' %}
                                     <!-- Unify Project -->
                                     <div class="g-mb-20">
                                         <h6 class="g-mb-10">Socialising <span class="float-right g-ml-10">{{ content.rating_socialising }}</span></h6>
@@ -124,6 +133,7 @@
                                             <div class="js-hr-progress-bar-indicator progress-bar g-bg-pink u-progress-bar--xs" role="progressbar" style="width: {{ content.rating_socialising / 5 * 100 }}%;" aria-valuenow="{{ content.rating_socialising }}" aria-valuemin="0" aria-valuemax="5"></div>
                                         </div>
                                     </div>
+                                    {% endif %}
                                     <!-- End Unify Project -->
                                 </div></div><div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-minimal-dark mCSB_scrollTools_vertical" style="display: block;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 50px; display: block; height: 208px; max-height: 266px; top: 0px;"><div class="mCSB_dragger_bar" style="line-height: 50px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div>
                         <!-- End Panel Body -->
@@ -147,7 +157,9 @@
                         <!-- Panel Body -->
                         <div class="card-block g-pa-0">
                             <div class="media g-brd-around g-brd-gray-light-v4 g-pa-20 g-mb-20">
+                                {% if content.images|length > 0 %}
                                 <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-2 g-mr-20" src="{{ content.images[0].thumbnails['100x100'] }}" alt="Image Description">
+                                {% endif %}
                                 <div class="media-body">
                                     <div class="d-sm-flex justify-content-sm-between align-items-sm-center g-mb-15 g-mb-10--sm">
                                         <header class="g-mb-5 g-mb-0--sm">
