@@ -44,6 +44,7 @@ monolog:
 #    delivery_address: me@example.com
 
 assetic:
+    node: /usr/local/bin/node
     use_controller: false
     filters:
       cssrewrite: ~
