@@ -67,7 +67,7 @@
             </meta>
         </property>
 
-        <property name="mainImage" type="media_selection" mandatory="true">
+        <property name="mainImage" type="media_selection">
             <meta>
                 <title lang="en">Main Image</title>
                 <title lang="de">Hauptbild</title>
