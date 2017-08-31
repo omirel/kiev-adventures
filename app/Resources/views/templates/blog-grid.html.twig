@@ -1,0 +1,101 @@
+{% extends "master.html.twig" %}
+
+{% block meta %}
+    {% include "SuluWebsiteBundle:Extension:seo.html.twig" with {
+        "seo": extension.seo|default([]),
+        "content": content|default([]),
+        "urls": urls|default([]),
+        "shadowBaseLocale": shadowBaseLocale|default(),
+        "defaultLocale": request.defaultLocale|default('en')
+    } %}
+{% endblock %}
+
+{% block content %}
+    <!-- Breadcrumbs -->
+    <section class="g-bg-gray-light-v5 g-py-80">
+        <div class="container text-center">
+            <h2 class="h2 g-color-black g-font-weight-600">{{  content.title }}</h2>
+
+            <ul class="u-list-inline">
+                {% for item in sulu_breadcrumb(uuid) %}
+                    {% if loop.last %}
+                        <li class="list-inline-item g-color-primary">
+                            <span>{{ item.title }}</span>
+                        </li>
+                    {% else %}
+                        <li class="list-inline-item g-mr-5">
+                            <a class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover" href="{{ sulu_content_path(item.url) }}">{{ item.title }}</a>
+                            <i class="g-color-gray-light-v2 g-ml-5">/</i>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+    <!-- End Breadcrumbs -->
+
+    <!-- Blog Grid Overlap Blocks -->
+    <div class="container g-py-100">
+        <div class="masonry-grid row g-mb-70">
+            <div class="masonry-grid-sizer col-sm-1"></div>
+
+            {% for item in content.smart_content %}
+            <div class="masonry-grid-item col-sm-6 col-lg-4 g-mb-30">
+                <!-- Blog Grid Overlap Blocks -->
+                <article>
+                    <a href="{{ sulu_content_path(item.url) }}">
+                        <img class="img-fluid w-100" src="{{ item.mainImage[0].thumbnails['500x450'] }}" alt="{{ item.title }}">
+                    </a>
+                    <div class="g-width-80x g-bg-white g-pos-rel g-z-index-1 g-pa-25 g-mt-minus-50 mx-auto">
+                        <span class="d-block g-color-gray-dark-v4 g-font-weight-600 g-font-size-12 text-uppercase mb-2">{{ item.createdAt|date("F jS\\, Y") }}</span>
+                        <h2 class="h5 g-color-black g-font-weight-600 mb-3">
+                            <a class="u-link-v5 g-color-black g-color-primary--hover g-cursor-pointer" href="{{ sulu_content_path(item.url) }}">{{ item.title }}</a>
+                        </h2>
+                        <p class="g-color-gray-dark-v4 g-line-height-1_8">{{ item.teaser[0:100] }}...</p>
+                        <a class="g-font-size-13" href="{{ sulu_content_path(item.url) }}">Read more...</a>
+                    </div>
+                </article>
+                <!-- End Blog Grid Overlap Blocks -->
+            </div>
+            {% endfor %}
+
+        </div>
+
+        <!-- Pagination -->
+        {% set page = view.smart_content.page %}
+        <nav class="text-center" aria-label="Page Navigation">
+            <ul class="list-inline">
+                {% if page-1 >= 1 %}
+                <li class="list-inline-item float-left hidden-xs-down">
+                    <a class="u-pagination-v1__item u-pagination-v1-4 g-brd-gray-light-v3 g-brd-primary--hover g-rounded-50 g-pa-7-16" href="{{ sulu_content_path(content.url) }}?p={{ page-1 }}" aria-label="Previous">
+              <span aria-hidden="true">
+                <i class="fa fa-angle-left g-mr-5"></i> Previous
+              </span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                {% endif %}
+
+                {#<li class="list-inline-item">#}
+                    {#<a class="u-pagination-v1__item u-pagination-v1-4 u-pagination-v1-4--active g-rounded-50 g-pa-7-14" href="#">1</a>#}
+                {#</li>#}
+                {#<li class="list-inline-item">#}
+                    {#<a class="u-pagination-v1__item u-pagination-v1-4 g-rounded-50 g-pa-7-14" href="#">2</a>#}
+                {#</li>#}
+
+                {% if view.smart_content.hasNextPage %}
+                <li class="list-inline-item float-right hidden-xs-down">
+                    <a class="u-pagination-v1__item u-pagination-v1-4 g-brd-gray-light-v3 g-brd-primary--hover g-rounded-50 g-pa-7-16" href="{{ sulu_content_path(content.url) }}?p={{ page+1 }}" aria-label="Next">
+              <span aria-hidden="true">
+                Next <i class="fa fa-angle-right g-ml-5"></i>
+              </span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+        <!-- End Pagination -->
+    </div>
+    <!-- End Blog Grid Overlap Blocks -->
+{% endblock %}

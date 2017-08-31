@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<template xmlns="http://schemas.sulu.io/template/template"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xi="http://www.w3.org/2001/XInclude"
+          xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd">
+
+    <key>blog-grid</key>
+
+    <view>templates/blog-grid</view>
+    <controller>SuluWebsiteBundle:Default:index</controller>
+    <cacheLifetime>2400</cacheLifetime>
+
+    <meta>
+        <title lang="en">Blog Grid</title>
+        <title lang="de">Blog Übersichtsseite</title>
+    </meta>
+
+    <properties>
+        <section name="highlight">
+            <xi:include href="highlight-properties.xml" xpointer="xmlns(sulu=http://schemas.sulu.io/template/template)
+                      xpointer(/sulu:template/sulu:properties)"/>
+        </section>
+
+        <section name="content">
+            <properties>
+                <property name="smart_content" type="smart_content">
+                    <meta>
+                        <title lang="en">Blog Content</title>
+                        <title lang="de">Blog Inhalte</title>
+                    </meta>
+
+                    <params>
+                        <param name="provider" value="content"/>
+                        <param name="max_per_page" value="6"/>
+                        <param name="page_parameter" value="p"/>
+                        <param name="properties" type="collection">
+                            <param name="title" value="title"/>
+                            <param name="teaser" value="teaser"/>
+                            <param name="createdAt" value="createdAt"/>
+                            <param name="mainImage" value="mainImage"/>
+                        </param>
+                        <param name="present_as" type="collection">
+                            <param name="two">
+                                <meta>
+                                    <title lang="en">Two columns</title>
+                                </meta>
+                            </param>
+                            <param name="one">
+                                <meta>
+                                    <title lang="en">One column</title>
+                                </meta>
+                            </param>
+                        </param>
+                    </params>
+                </property>
+            </properties>
+        </section>
+
+    </properties>
+</template>
