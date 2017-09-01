@@ -103,6 +103,15 @@ sulu_community:
             from:
                 name: 'Website'
                 email: %sulu_admin.email%
+            registration:
+                activate_user: false
+                auto_login: true # only available when activate_user is true
+                email:
+                    subject: Registration
+                    user_template: AppBundle:templates:community/Registration/registration-email.html.twig
+                    admin_template: ~
+                template: AppBundle:templates:community/Registration/registration-form.html.twig
+                type: AppBundle\Form\Type\RegistrationType
 
 # SuluDocumentManager Configuration
 sulu_document_manager:
