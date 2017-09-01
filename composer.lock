@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "00eb5c0557ffca686b4fee3a5af4b68a",
+    "content-hash": "dce6a50c354c972ad0778090fd4e51f2",
     "packages": [
         {
             "name": "aferrandini/urlizer",
@@ -3422,6 +3422,101 @@
             "time": "2016-03-08T00:47:06+00:00"
         },
         {
+            "name": "php-task/php-task",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-task/php-task.git",
+                "reference": "a394ba796c40679b8f561b636929c7de586fe58b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-task/php-task/zipball/a394ba796c40679b8f561b636929c7de586fe58b",
+                "reference": "a394ba796c40679b8f561b636929c7de586fe58b",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/common": "^2.6",
+                "mtdowling/cron-expression": "^1.1",
+                "php": "~5.5 || ~7.0",
+                "ramsey/uuid": "^3.1",
+                "symfony/event-dispatcher": "^2.6 || ^3.0"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "^1.6",
+                "phpunit/phpunit": "^4.8",
+                "psr/log": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes Wachter",
+                    "email": "johannes.wachter@massiveart.at"
+                }
+            ],
+            "description": "Library to work with synchronous and asynchronous tasks in php.",
+            "time": "2017-06-19T17:39:12+00:00"
+        },
+        {
+            "name": "php-task/task-bundle",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-task/TaskBundle.git",
+                "reference": "de276da01f48adb9ba12d03e14d786fb86d307a4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-task/TaskBundle/zipball/de276da01f48adb9ba12d03e14d786fb86d307a4",
+                "reference": "de276da01f48adb9ba12d03e14d786fb86d307a4",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/orm": "^2.5",
+                "php": "~5.5 || ~7.0",
+                "php-task/php-task": "^1.1",
+                "symfony/config": "^2.6 || ^3.0",
+                "symfony/console": "^2.6 || ^3.0",
+                "symfony/dependency-injection": "^2.6 || ^3.0",
+                "symfony/expression-language": "^2.6 || ^3.0",
+                "symfony/http-kernel": "^2.6 || ^3.0"
+            },
+            "require-dev": {
+                "doctrine/data-fixtures": "^1.1",
+                "doctrine/doctrine-bundle": "^1.5",
+                "phpunit/phpunit": "^4.8",
+                "symfony/finder": "^2.6",
+                "symfony/framework-bundle": "^2.6"
+            },
+            "type": "bundle",
+            "autoload": {
+                "psr-4": {
+                    "Task\\TaskBundle\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes Wachter",
+                    "email": "johannes.wachter@massiveart.at"
+                }
+            ],
+            "description": "Symfony integration for php-task library",
+            "time": "2017-06-19T17:43:33+00:00"
+        },
+        {
             "name": "phpcollection/phpcollection",
             "version": "0.5.0",
             "source": {
@@ -4575,6 +4670,55 @@
                 "tree"
             ],
             "time": "2016-01-26T23:58:32+00:00"
+        },
+        {
+            "name": "sulu/automation-bundle",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sulu/SuluAutomationBundle.git",
+                "reference": "822575b925e7592f05231a1e30328b4b99fc323d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sulu/SuluAutomationBundle/zipball/822575b925e7592f05231a1e30328b4b99fc323d",
+                "reference": "822575b925e7592f05231a1e30328b4b99fc323d",
+                "shasum": ""
+            },
+            "require": {
+                "jms/serializer-bundle": "^1.1",
+                "php-task/task-bundle": "^1.0",
+                "sulu/sulu": "^1.5",
+                "willdurand/hateoas-bundle": "^1.2"
+            },
+            "require-dev": {
+                "jackalope/jackalope-doctrine-dbal": "~1.2",
+                "phpunit/phpunit": "~4.8 || ~5.0",
+                "symfony/monolog-bundle": "~2.4",
+                "zendframework/zendsearch": "2.*@RC"
+            },
+            "type": "sulu-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Sulu\\Bundle\\AutomationBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sulu Community",
+                    "homepage": "https://github.com/sulu/SuluAutomationBundle/contributors"
+                }
+            ],
+            "description": "The Sulu Bundle which provides automation functionality",
+            "keywords": [
+                "automation",
+                "sulu"
+            ],
+            "time": "2017-06-28T13:02:02+00:00"
         },
         {
             "name": "sulu/document-manager",
