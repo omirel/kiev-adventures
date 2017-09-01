@@ -8,7 +8,7 @@ parameters:
     locale: en
 
 framework:
-    #esi:             ~
+    esi: { enabled: true }
     translator: { fallbacks: ["%locale%"] }
     secret: "%secret%"
     router:
@@ -101,7 +101,7 @@ sulu_community:
     webspaces:
         kievadventures:
             from:
-                name: 'Website'
+                name: 'Sulu'
                 email: %sulu_admin.email%
             registration:
                 activate_user: false
@@ -112,6 +112,9 @@ sulu_community:
                     admin_template: ~
                 template: AppBundle:templates:community/Registration/registration-form.html.twig
                 type: AppBundle\Form\Type\RegistrationType
+            login:
+                embed_template: login-embed.html.twig
+                template: login.html.twig
 
 # SuluDocumentManager Configuration
 sulu_document_manager:

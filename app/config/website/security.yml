@@ -23,11 +23,11 @@ security:
             pattern: ^/
             anonymous: ~
             form_login:
-                login_path: /login
-                check_path: /login
+                login_path: sulu_community.login
+                check_path: sulu_community.login
             logout:
-                path: /logout
-                target: /
+                path: sulu_community.logout
+                target: sulu_community.logout
             remember_me:
                 secret:   '%secret%'
                 lifetime: 604800 # 1 week in seconds
