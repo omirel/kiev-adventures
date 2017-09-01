@@ -15,8 +15,8 @@ security:
             id: sulu_security.user_provider
 
     access_control:
-       - { path: /profile, roles: admin }
-       - { path: /completion, roles: admin }
+       - { path: /profile, roles: KievadventuresUser }
+       - { path: /completion, roles: KievadventuresUser }
 
     firewalls:
         kievadventures:
