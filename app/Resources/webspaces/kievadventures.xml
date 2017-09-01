@@ -4,7 +4,11 @@
           xsi:schemaLocation="http://schemas.sulu.io/webspace/webspace http://schemas.sulu.io/webspace/webspace-1.1.xsd">
 
     <name>Kiev Adventures</name>
-    <key>kiev-adventures</key>
+    <key>kievadventures</key>
+
+    <security>
+        <system>Sulu</system>
+    </security>
 
     <localizations>
         <localization language="en" default="true"/>

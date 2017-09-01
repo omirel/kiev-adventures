@@ -33,7 +33,9 @@
         "doctrine/doctrine-bundle": "^1.0",
         "doctrine/doctrine-cache-bundle": "^1.0",
         "oro/doctrine-extensions": "^1.0",
-        "symfony/assetic-bundle": "^2.8"
+        "symfony/assetic-bundle": "^2.8",
+        "sulu/automation-bundle": "^1.1",
+        "sulu/community-bundle": "^0.3.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.8 || ~3.0",
