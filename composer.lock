@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "dce6a50c354c972ad0778090fd4e51f2",
+    "content-hash": "7a8f491f935af09ef18461fe028ff713",
     "packages": [
         {
             "name": "aferrandini/urlizer",
@@ -106,6 +106,68 @@
                 "driver"
             ],
             "time": "2016-03-02T13:49:15+00:00"
+        },
+        {
+            "name": "beberlei/DoctrineExtensions",
+            "version": "v1.0.17",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/beberlei/DoctrineExtensions.git",
+                "reference": "608854d5979e21cd8290ddf03a92f55017f62c80"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/beberlei/DoctrineExtensions/zipball/608854d5979e21cd8290ddf03a92f55017f62c80",
+                "reference": "608854d5979e21cd8290ddf03a92f55017f62c80",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "doctrine/orm": "~2.1",
+                "nesbot/carbon": "*",
+                "phpunit/phpunit": "~4.5",
+                "symfony/yaml": "~2.6",
+                "zf1/zend-date": "~1.12",
+                "zf1/zend-registry": "~1.12"
+            },
+            "suggest": {
+                "nesbot/carbon": "Alternative to DateTime",
+                "zf1/zend-date": "Alternative to DateTime"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DoctrineExtensions\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Steve Lacey",
+                    "email": "steve@stevelacey.net"
+                }
+            ],
+            "description": "A set of extensions to Doctrine 2 that add support for additional query functions available in MySQL and Oracle.",
+            "keywords": [
+                "database",
+                "doctrine",
+                "orm"
+            ],
+            "time": "2017-06-16T07:29:39+00:00"
         },
         {
             "name": "behat/transliterator",
@@ -4729,6 +4791,67 @@
                 "sulu"
             ],
             "time": "2017-06-28T13:02:02+00:00"
+        },
+        {
+            "name": "sulu/community-bundle",
+            "version": "0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sulu/SuluCommunityBundle.git",
+                "reference": "25a9a6ee1a94ebe190e53eeeac065bcce522be76"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sulu/SuluCommunityBundle/zipball/25a9a6ee1a94ebe190e53eeeac065bcce522be76",
+                "reference": "25a9a6ee1a94ebe190e53eeeac065bcce522be76",
+                "shasum": ""
+            },
+            "require": {
+                "beberlei/doctrineextensions": "^1.0",
+                "php": "^5.5 || ^7.0",
+                "sulu/sulu": "^1.3 || dev-develop"
+            },
+            "require-dev": {
+                "doctrine/doctrine-bundle": "1.4.*",
+                "friendsofsymfony/rest-bundle": "^1.5",
+                "gedmo/doctrine-extensions": "^2.3.1",
+                "jackalope/jackalope-doctrine-dbal": "^1.2.5",
+                "massive/search-bundle": "@dev",
+                "phpunit/phpunit": ">=4.8, <6.0",
+                "sulu/document-manager": "@dev",
+                "symfony/monolog-bundle": "2.4.*",
+                "symfony/swiftmailer-bundle": "~2.3",
+                "zendframework/zend-stdlib": "2.3.1 as 2.0.0rc5",
+                "zendframework/zendsearch": "2.*@dev"
+            },
+            "type": "sulu-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Sulu\\Bundle\\CommunityBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sulu Community",
+                    "homepage": "https://github.com/sulu/SuluCommunityBundle/contributors"
+                }
+            ],
+            "description": "Sulu Bundle for building a community",
+            "homepage": "https://github.com/sulu/SuluCommunityBundle",
+            "keywords": [
+                "double opt-in",
+                "login",
+                "password forget",
+                "password reset",
+                "profile",
+                "registration",
+                "single opt-in"
+            ],
+            "time": "2017-04-03T08:26:25+00:00"
         },
         {
             "name": "sulu/document-manager",

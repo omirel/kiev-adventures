@@ -96,6 +96,14 @@ sulu_core:
                     path: "%kernel.root_dir%/Resources/templates/snippets"
                     type: "snippet"
 
+# sulu/SuluCommunityBundle
+sulu_community:
+    webspaces:
+        kievadventures:
+            from:
+                name: 'Website'
+                email: %sulu_admin.email%
+
 # SuluDocumentManager Configuration
 sulu_document_manager:
     sessions:

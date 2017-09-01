@@ -110,3 +110,8 @@ sulu_automation:
     type: rest
     resource: "@SuluAutomationBundle/Resources/config/routing.xml"
     prefix: /admin/automation
+
+sulu_community_api:
+    type: rest
+    resource: "@SuluCommunityBundle/Resources/config/routing_api.xml"
+    prefix: /admin/api

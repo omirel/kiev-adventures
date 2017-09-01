@@ -72,6 +72,8 @@ abstract class AbstractKernel extends SuluKernel
             new Dubture\FFmpegBundle\DubtureFFmpegBundle(),
             new Task\TaskBundle\TaskBundle(),
             new Sulu\Bundle\AutomationBundle\SuluAutomationBundle(),
+            new Symfony\Bundle\SecurityBundle\SecurityBundle(),
+            new Sulu\Bundle\CommunityBundle\SuluCommunityBundle(),
 
             // tools
             new Massive\Bundle\BuildBundle\MassiveBuildBundle(),
