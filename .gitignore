@@ -1,6 +1,7 @@
 # app
 /app/bootstrap.php.cache
 /app/config/parameters.yml
+/app/config/parameters.prod.yml
 app/maintenance.php
 
 # bin
