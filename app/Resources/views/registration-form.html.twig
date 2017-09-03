@@ -1,0 +1,70 @@
+{% extends "master.html.twig" %}
+
+{% block content %}
+    <!-- Signup -->
+    <section class="g-bg-gray-light-v5">
+        <div class="container g-py-100">
+            <div class="row justify-content-center">
+                <div class="col-sm-10 col-md-9 col-lg-6">
+                    <div class="u-shadow-v21 g-bg-white rounded g-py-40 g-px-30">
+                    {% if app.request.get('send') == 'true' %}
+                        <div class="alert alert-success" role="alert">
+                            <strong>Well done!</strong> To complete the registration click on the link in the received email.
+                        </div>
+                    {% else %}
+                        <header class="text-center mb-4">
+                            <h2 class="h2 g-color-black g-font-weight-600">Signup</h2>
+                        </header>
+
+                        <!-- Form -->
+                        {{ form_start(form, { 'attr': {'class': 'g-py-15'}}) }}
+                            {{ form_errors(form) }}
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 mb-4">
+                                    {{ form_row(form.contact.firstName, { 'attr': {'class': 'form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15'} }) }}
+                                </div>
+
+                                <div class="col-xs-12 col-sm-6 mb-4">
+                                    {{ form_row(form.contact.lastName, { 'attr': {'class': 'form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15'} }) }}
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                {{ form_row(form.username, { 'attr': {'class': 'form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15'} }) }}
+                            </div>
+
+                            <div class="mb-4">
+                                {{ form_row(form.email, { 'attr': {'class': 'form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15'} }) }}
+                            </div>
+
+                            <div class="mb-4" >
+                                {{ form_row(form.plainPassword, { 'attr': {'class': 'form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15'} }) }}
+                            </div>
+
+                            <div class="row justify-content-between mb-5">
+                                <div class="col-8 align-self-center">
+                                    <label class="form-check-inline u-check g-color-gray-dark-v5 g-font-size-12 g-pl-25 mb-0">
+                                        {{ form_row(form.terms, { 'attr': {'class': 'g-pos-abs g-top-0 g-left-0', 'checked': 'checked'} }) }}
+                                        I accept the <a href="#">Terms and Conditions</a>
+                                    </label>
+                                </div>
+
+                                <div class="col-4 align-self-center text-right">
+                                    {{ form_row(form.submit, { 'attr': {'class': 'btn btn-md u-btn-primary rounded g-py-13 g-px-25'} }) }}
+                                </div>
+                            </div>
+                        {{ form_end(form) }}
+                        <!-- End Form -->
+
+                        <footer class="text-center">
+                            <p class="g-color-gray-dark-v5 g-font-size-13 mb-0">Already have an account? <a class="g-font-weight-600" href="{{ path('sulu_community.login') }}">signin</a></p>
+                        </footer>
+                    {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Signup -->
+
+{% endblock %}

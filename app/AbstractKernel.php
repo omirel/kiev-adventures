@@ -75,6 +75,9 @@ abstract class AbstractKernel extends SuluKernel
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Sulu\Bundle\CommunityBundle\SuluCommunityBundle(),
 
+            // AppBundle
+            new AppBundle\AppBundle(),
+
             // tools
             new Massive\Bundle\BuildBundle\MassiveBuildBundle(),
         ];

@@ -1,6 +1,7 @@
 imports:
     - { resource: parameters.yml }
     - { resource: services.yml }
+    - { resource: "@AppBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -108,9 +109,9 @@ sulu_community:
                 auto_login: true # only available when activate_user is true
                 email:
                     subject: Registration
-                    user_template: AppBundle:templates:community/Registration/registration-email.html.twig
+                    user_template: registration-email.html.twig
                     admin_template: ~
-                template: AppBundle:templates:community/Registration/registration-form.html.twig
+                template: registration-form.html.twig
                 type: AppBundle\Form\Type\RegistrationType
             login:
                 embed_template: login-embed.html.twig
