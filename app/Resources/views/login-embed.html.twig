@@ -4,19 +4,28 @@
         {% set media = sulu_resolve_media(app.user.contact.avatar, request.locale) %}
     {% endif %}
 
-    <a href="{{ path('sulu_community.profile') }}">
-        {% if media is not null %}
-            <img src="{{ media.thumbnails['100x100'] }}"/>
-        {% endif %}
+    {#<a href="{{ path('sulu_community.profile') }}">#}
+        {#{% if media is not null %}#}
+            {#<img src="{{ media.thumbnails['100x100'] }}"/>#}
+        {#{% endif %}#}
 
-        {{ app.user.username|default('Profile') }}
-    </a>
+        {#{{ app.user.username|default('Profile') }}#}
+    {#</a>#}
 
-    <a href="{{ path('sulu_community.logout') }}">
-        Logout
-    </a>
+    {#<a href="{{ path('sulu_community.logout') }}">#}
+        {#Logout#}
+    {#</a>#}
+    <div class="d-inline-block hidden-xs-down g-pos-rel g-valign-middle g-pl-30 g-pl-0--lg">
+        logged in as {{ app.user.username|default('Profile') }}
+    </div>
 {% else %}
-    <a href="{{ path('sulu_community.login') }}">
-        Login
-    </a>
+    <div class="d-inline-block hidden-xs-down g-pos-rel g-valign-middle g-pl-30 g-pl-0--lg">
+        <a class="btn u-btn-outline-primary g-font-size-13 text-uppercase g-py-10 g-px-15" href="{{ path('sulu_community.login') }}" target="_blank">SIGNIN</a>
+    </div>
+    <div class="d-inline-block hidden-xs-down g-pos-rel g-valign-middle g-pl-30 g-pl-0--lg">
+        &nbsp;&nbsp;&nbsp;
+    </div>
+    <div class="d-inline-block hidden-xs-down g-pos-rel g-valign-middle g-pl-30 g-pl-0--lg">
+        <a class="btn u-btn-outline-primary g-font-size-13 text-uppercase g-py-10 g-px-15" href="{{ path('sulu_community.registration') }}" target="_blank">SIGNUP</a>
+    </div>
 {% endif %}
