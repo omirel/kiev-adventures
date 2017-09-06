@@ -133,6 +133,15 @@ sulu_community:
                 redirect_to: ?send=true
                 template: forget-form.html.twig
                 type: AppBundle\Form\Type\PasswordForgetType
+            password_reset:
+                auto_login: true
+                email:
+                    subject: Password Reset
+                    admin_template: ~
+                    user_template: reset-email.html.twig
+                redirect_to: ?send=true
+                template: Areset-form.html.twig
+                type: AppBundle\Form\Type\PasswordResetType
             login:
                 embed_template: login-embed.html.twig
                 template: login.html.twig
