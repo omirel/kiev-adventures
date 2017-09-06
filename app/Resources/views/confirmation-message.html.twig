@@ -1,0 +1,15 @@
+{% extends "master.html.twig" %}
+
+{% block content %}
+    <h1>Confirmation</h1>
+
+    {% if success %}
+        <p>
+            You successfully activated your user.
+        </p>
+    {% else %}
+        <p>
+            Invalid confirmation token.
+        </p>
+    {% endif %}
+{% endblock %}

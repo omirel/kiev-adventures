@@ -116,6 +116,15 @@ sulu_community:
                     admin_template: ~
                 template: registration-form.html.twig
                 type: AppBundle\Form\Type\RegistrationType
+            confirmation:
+                activate_user: true
+                auto_login: true
+                email:
+                    subject: Confirmation
+                    user_template: confirmation-email.html.twig
+                    admin_template: confirmation-email.html.twig
+                redirect_to: ~
+                template: confirmation-message.html.twig
             login:
                 embed_template: login-embed.html.twig
                 template: login.html.twig
