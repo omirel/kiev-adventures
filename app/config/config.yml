@@ -145,6 +145,14 @@ sulu_community:
             login:
                 embed_template: login-embed.html.twig
                 template: login.html.twig
+            profile:
+                email:
+                    subject: Profile Updated
+                    user_template: profile-email.html.twig
+                    admin_template: profile-email.html.twig
+                redirect_to: ~
+                template: profile-form.html.twig
+                type: AppBundle\Form\Type\ProfileType
 
 # SuluDocumentManager Configuration
 sulu_document_manager:
