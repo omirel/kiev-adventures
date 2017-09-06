@@ -105,7 +105,7 @@ sulu_community:
     webspaces:
         kievadventures:
             from:
-                name: 'Sulu'
+                name: 'Kiev Adventures Support'
                 email: %sulu_admin.email%
             registration:
                 activate_user: false
@@ -125,6 +125,14 @@ sulu_community:
                     admin_template: confirmation-email.html.twig
                 redirect_to: ~
                 template: confirmation-message.html.twig
+            password_forget:
+                email:
+                    subject: Forgot password
+                    admin_template: ~
+                    user_template: forget-email.html.twig
+                redirect_to: ?send=true
+                template: forget-form.html.twig
+                type: AppBundle\Form\Type\PasswordForgetType
             login:
                 embed_template: login-embed.html.twig
                 template: login.html.twig

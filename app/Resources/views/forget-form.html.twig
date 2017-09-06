@@ -1,0 +1,42 @@
+{% extends "master.html.twig" %}
+
+{% block content %}
+    <!-- Login -->
+    <section class="g-bg-gray-light-v5">
+        <div class="container g-py-100">
+            <div class="row justify-content-center">
+                <div class="col-sm-8 col-lg-5">
+                    <div class="u-shadow-v21 g-bg-white rounded g-py-40 g-px-30">
+                        <header class="text-center mb-4">
+                            <h2 class="h2 g-color-black g-font-weight-600">Forgot password</h2>
+                        </header>
+
+                        {% if app.request.get('send') == 'true' %}
+                            <p>
+                                Click on the link in your email to reset your password.
+                            </p>
+                        {% else %}
+                            <!-- Form -->
+                            {{ form_start(form, { 'attr': {'class': 'g-py-15'}}) }}
+                            {{ form_errors(form) }}
+
+                            <div class="mb-4">
+                                {{ form_row(form.email_username, { 'attr': {'class': 'form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15'} }) }}
+                            </div>
+
+                            <div class="row justify-content-between mb-5">
+
+                                <div class="col-4 align-self-center text-right">
+                                    {{ form_row(form.submit, { 'attr': {'class': 'btn btn-md u-btn-primary rounded g-py-13 g-px-25'} }) }}
+                                </div>
+                            </div>
+                            {{ form_end(form) }}
+                            <!-- End Form -->
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Login -->
+{% endblock %}
