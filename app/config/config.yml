@@ -140,7 +140,7 @@ sulu_community:
                     admin_template: ~
                     user_template: reset-email.html.twig
                 redirect_to: ?send=true
-                template: Areset-form.html.twig
+                template: reset-form.html.twig
                 type: AppBundle\Form\Type\PasswordResetType
             login:
                 embed_template: login-embed.html.twig
