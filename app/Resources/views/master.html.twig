@@ -117,6 +117,14 @@
                             {% endfor %}
                             <!-- End Pages -->
 
+
+                            <!-- Profile Link -->
+                            {% if app.user %}
+                            <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                                <a href="{{ path('sulu_community.profile') }}" class="nav-link g-py-7 g-px-0">My Profile</a>
+                            </li>
+                            {% endif %}
+
                         </ul>
                     </div>
                     <!-- End Navigation -->

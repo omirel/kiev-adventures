@@ -15,8 +15,8 @@ security:
             id: sulu_security.user_provider
 
     access_control:
-       - { path: /profile, roles: KievadventuresUser }
-       - { path: /completion, roles: KievadventuresUser }
+       - { path: /profile, roles: ROLE_SULU_KIEVADVENTURESUSER }
+       - { path: /completion, roles: ROLE_SULU_KIEVADVENTURESUSER }
 
     firewalls:
         kievadventures:
@@ -26,7 +26,7 @@ security:
                 login_path: sulu_community.login
                 check_path: sulu_community.login
             logout:
-                path: /logout
+                path:   sulu_community.logout
                 target: /
             remember_me:
                 secret:   '%secret%'

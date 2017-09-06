@@ -23,8 +23,8 @@ class ProfileContactType extends AbstractType
             ChoiceType::class,
             [
                 'choices' => [
-                    'contact.contacts.formOfAddress.male',
-                    'contact.contacts.formOfAddress.female',
+                    '1',
+                    '2',
                 ],
                 'translation_domain' => 'backend',
                 'expanded' => true,
@@ -41,8 +41,8 @@ class ProfileContactType extends AbstractType
             CollectionType::class,
             [
                 'label' => false,
-                'type' => $options['contact_address_type'],
-                'options' => $options['contact_address_type_options'],
+                'entry_type' => $options['contact_address_type'],
+                'entry_options' => $options['contact_address_type_options'],
             ]
         );
         $builder->add(
@@ -50,8 +50,8 @@ class ProfileContactType extends AbstractType
             CollectionType::class,
             [
                 'label' => false,
-                'type' => $options['note_type'],
-                'options' => $options['note_type_options'],
+                'entry_type' => $options['note_type'],
+                'entry_options' => $options['note_type_options'],
             ]
         );
     }
