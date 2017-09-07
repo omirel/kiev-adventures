@@ -125,6 +125,18 @@ sulu_community:
                     admin_template: confirmation-email.html.twig
                 redirect_to: ~
                 template: confirmation-message.html.twig
+            completion:
+                email:
+                    subject: Completion
+                    user_template: ~
+                    admin_template: ~
+                redirect_to: /
+                service: app.completion_validator
+                template: completion-form.html.twig
+                type: AppBundle\Form\Type\CompletionType
+            login:
+                embed_template: login-embed.html.twig
+                template: login.html.twig
             password_forget:
                 email:
                     subject: Forgot password
@@ -142,9 +154,6 @@ sulu_community:
                 redirect_to: ?send=true
                 template: reset-form.html.twig
                 type: AppBundle\Form\Type\PasswordResetType
-            login:
-                embed_template: login-embed.html.twig
-                template: login.html.twig
             profile:
                 email:
                     subject: Profile Updated

@@ -1,4 +1,4 @@
 services:
-#    app.example:
-#        class: AppBundle\Example
+    app.completion_validator:
+        class: AppBundle\Validator\CompletionValidator
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
