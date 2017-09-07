@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    {% block meta %}{% endblock %}
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../../../favicon.ico">
+
+    {% block style %}
+    <!-- CSS Assetic2 -->
+    {% stylesheets
+    '//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700'
+    'assets/vendor/bootstrap/bootstrap.min.css'
+    'assets/vendor/icon-awesome/css/font-awesome.min.css'
+    'assets/vendor/icon-line-pro/style.css'
+    'assets/vendor/icon-hs/style.css'
+    'assets/vendor/slick-carousel/slick/slick.css'
+    'assets/vendor/hs-megamenu/src/hs.megamenu.css'
+    'assets/vendor/hamburgers/hamburgers.min.css'
+    'assets/vendor/animate.css'
+    'assets/css/unify.css'
+    'assets/css/custom.css'
+    'assets/vendor/icon-line/css/simple-line-icons.css'
+    filter='cssrewrite' filter='uglifycss' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+    {% endblock %}
+</head>
+
+<body>
+<main>
+    <!-- Header -->
+    <header id="js-header" class="u-header u-header--static">
+        {% block header %}
+        <div class="u-header__section u-header__section--light g-bg-white u-shadow-v18 g-transition-0_3 g-py-10">
+            <nav class="js-mega-menu navbar navbar-toggleable-md">
+                <div class="container">
+                    <!-- End Responsive Toggle Button -->
+                    <!-- Logo -->
+                    <a href="/" class="navbar-brand lead">
+                        <span class="g-color-primary g-font-weight-600 g-font-size-32 g-line-height-1">kiev</span><span class="g-color-dark g-font-weight-100 g-font-size-32 g-line-height-1">adventures</span>
+                    </a>
+                    <!-- End Logo -->
+                </div>
+            </nav>
+        </div>
+        {% endblock %}
+    </header>
+    <!-- End Header -->
+
+    {% block content %}
+    {% endblock %}
+
+    <!-- Copyright Footer -->
+    <footer class="g-bg-gray-dark-v1 g-color-white-opacity-0_8 g-py-20">
+        {% block footer %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 text-center text-md-left g-mb-10 g-mb-0--md">
+                    <div class="d-lg-flex">
+                        <small class="d-block g-font-size-default g-mr-10 g-mb-10 g-mb-0--md">{{ 'now'|date('Y') }} © All Rights Reserved.</small>
+                        <ul class="u-list-inline">
+                        {% for item in sulu_navigation_root_tree('footer', 1) %}
+                            <li class="list-inline-item">
+                                <a class="g-color-white-opacity-0_8 g-color-white--hover" href="{{ sulu_content_path(item.url) }}">{{ item.title }}</a>
+                            </li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        {% endblock %}
+    </footer>
+    <!-- End Copyright Footer -->
+</main>
+</body>
+</html>
