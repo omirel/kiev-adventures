@@ -210,3 +210,17 @@ dubture_f_fmpeg:
 services:
     jms_serializer.cache_naming_strategy: "@sulu_core.serialize_caching_strategy"
 
+# Sulu Location
+sulu_location:
+    enabled_providers:
+        - google
+    default_provider: google
+    geolocator: google
+    providers:
+        google:
+            title: 'Google Maps'
+            api_key: 'AIzaSyAl-gKILNoFj0naE8aHIZYfavDzb3Y0YY4'
+    geolocators:
+        google:
+          api_key: 'AIzaSyAl-gKILNoFj0naE8aHIZYfavDzb3Y0YY4'
+

@@ -81,6 +81,15 @@
                         <property name="images" type="media_selection"/>
                     </properties>
                 </type>
+                <type name="location">
+                    <meta>
+                        <title lang="en">Location</title>
+                        <title lang="de">Ort</title>
+                    </meta>
+                    <properties>
+                        <property name="location" type="location"/>
+                    </properties>
+                </type>
             </types>
         </block>
 
